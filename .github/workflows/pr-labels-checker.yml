@@ -7,7 +7,7 @@ jobs:
     if: github.base_ref == 'develop'
     runs-on: ubuntu-latest
     steps:
-      - uses: danielchabr/pr-labels-checker@v3
+      - uses: danielchabr/pr-labels-checker
         id: checkLabel
         with:
           hasSome: QA:tested,QA:skipped
@@ -15,7 +15,7 @@ jobs:
     if: github.base_ref == 'develop'
     runs-on: ubuntu-latest
     steps:
-      - uses: danielchabr/pr-labels-checker@v3
+      - uses: danielchabr/pr-labels-checker
         id: checkLabel
         with:
           hasNone: do not merge,blocked
