@@ -1,9 +1,11 @@
-name: PR Labels Check
+
+name: PR Labels Check Absa
 on:
   pull_request:
     types: [opened, labeled, unlabeled, synchronize]
 jobs:
-  Test approved or docs:
+  test_approved_or_docs:
+    name: Test approved or docs
     runs-on: ubuntu-latest
     steps:
       - uses: danielchabr/pr-labels-checker@master
@@ -11,7 +13,8 @@ jobs:
         with:
           hasSome: PR:tested,PR:no testing needed,docs
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-  Merge blocked:
+  merge_blocked:
+    name: Merge blocked
     runs-on: ubuntu-latest
     steps:
       - uses: danielchabr/pr-labels-checker@master
